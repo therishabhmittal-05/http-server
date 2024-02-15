@@ -37,11 +37,10 @@ function calc(n){
   }
   return ans;
 }
-
 app.get("/r", (req,res)=>{
   const n = req.query.n;
   const ans = calc(n);
-  res.sendStatus(ans);
+  res.send(ans.toString());
 })
 app.listen(port, ()=>{
   console.log(`port: ${port}`)
