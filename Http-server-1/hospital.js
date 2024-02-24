@@ -45,16 +45,34 @@ app.put("/", (req, res) => {
   res.json({});
 });
 app.delete("/", (req, res) => {
+  if(unhealthyCheck()){
   const newKidneys = [];
-  for (let i = 0; i < users[0].kidneys.length; i++) {
-    if (users[0].kidneys[i].healthy)
-      newKidneys.push({
-        healthy: true,
-      });
-  }
+    for (let i = 0; i < users[0].kidneys.length; i++) {
+      if (users[0].kidneys[i].healthy)
+        newKidneys.push({
+          healthy: true
+        });
+    }
   users[0].kidneys = newKidneys;
   res.json({
     msg: "done",
   });
+}
+else {
+  res.status(411).json({
+    error: "411"
+  })
+}
+
+ 
 });
+function unhealthyCheck(){
+  let unhealthy = false;
+  for(let i = 0; i< users[0].kidneys.length; i++){
+    if(!(users[0].kidneys[i].healthy)){
+      unhealthy = true;
+    }
+  }
+  return unhealthy;
+}
 app.listen(3000);
