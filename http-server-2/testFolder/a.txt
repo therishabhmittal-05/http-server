@@ -1,0 +1,90 @@
+Hi from a.txt
+
+
+
+1
+Rishabh Mittal 22014089 Operating Systems   
+ 
+ 
+OPERATING SYSTEMS LAB - 1  
+1) What is Operating System? An operating system (OS) is a type of software interface between the user and the device hardware. 
+This software allows users to communicate with the device and perform the desired functions. 
+Operating systems use two components to manage computer programs and applications: 
+• The kernel is the core inner component that processes data at the hardware level. It handles 
+input-output management, memory and process management. 
+• The shell is the outer layer that manages the interaction between the user and the OS. The 
+shell communicates with the operating system by either taking the input from the user or a 
+shell script. A shell script is a sequence of system commands that are stored in a file. 
+Operating system functions 
+Basic functions of an operating system include: 
+• Booting: An operating system manages the startup of a device. 
+• Memory management: An operating system coordinates computer applications and allocates space 
+to different programs installed in the computer. 
+• Data security: An operating system protects your data from cyberattacks. 
+• Loading and execution: An operating system starts and executes a program. 
+• Drive/disk management: An operating system manages computer drives and divides disks. 
+• Device control: An operating system enables you to allow or block access to devices. 
+• User interface: This part of an operating system, also known as UI, allows users to enter and receive 
+information. 
+• Process management: The operating system allocates space to enable computer processes, such as 
+storing and sharing information. 
+2) Types of Operating Systems 
+• Batch OS 
+a) The batch operating system does not have a direct link with the computer. A different system 
+divides and allocates similar tasks into batches for easy processing and faster response. 
+b) The batch operating system is appropriate for lengthy and time-consuming tasks. These 
+systems are used for tasks such as managing payroll systems, data entry and bank 
+statements. To avoid slowing down a device, each user prepares their tasks offline and 
+submits them to an operator. 
+• Time-sharing or multitasking OS 
+a) The time-sharing operating system, also known as a multitasking OS, works by allocating 
+time to a particular task and switching between tasks frequently. Unlike the batch system, 
+the time-sharing system allows users to complete their work in the system simultaneously. 
+b) Examples of time-sharing operating systems include Multics and Unix. These types of 
+systems allow many users to be distributed across various terminals to minimize response 
+time 
+Rishabh Mittal 22014089 Operating Systems   
+ 
+ 
+• Distributed OS 
+a) This system is based on autonomous but interconnected computers communicating with 
+each other via communication lines or a shared network. Each autonomous system has its 
+own processor that may differ in size and function. These operating systems are often used 
+for tasks such as telecommunication networks, airline reservation controls and peer-to-peer 
+networks. 
+b) A distributed operating system serves multiple applications and multiple users in real time. 
+The data processing function is then distributed across the processors. 
+• Network OS 
+a. Network operating systems are installed on a server providing users with the capability to 
+manage data, user groups and applications. This operating system enables users to access 
+and share files and devices such as printers, security software and other applications, mostly 
+in a local area network. 
+b. Examples of network operating systems include Microsoft Windows, Linux and macOS X. 
+• Real-time OS 
+a) Real-time operating systems provide support to real-time systems that require observance 
+of strict time requirements. They are typically used for tasks such as scientific experiments, 
+medical imaging, robotics and air traffic control operations. The response time between 
+input, processing and response is tiny, which is beneficial for processes that are highly 
+sensitive and need high precision. 
+ 
+b) These processes include operating missile systems, medical systems or air traffic control 
+systems, where delays may lead to loss of life and property. Real-time operating systems 
+may either be hard real-time systems or soft real-time systems. Hard real-time systems are 
+installed in applications with strict time constraints. 
+ 
+c) The system guarantees the completion of sensitive tasks on time. Hard real-time does not 
+have virtual memory. Soft real-time systems do not have equally rigid time requirements. A 
+critical task gets priority over other tasks.  
+• Mobile OS 
+a) Mobile operating systems such as Android OS, Apple and Windows mobile OS run exclusively 
+on small devices such as smartphones, tablets and wearables. The system combines the 
+features of a personal computer with additional features useful for a handheld device. 
+ 
+b) Mobile operating systems start when a device is powered on to provide access to installed 
+applications. Mobile operating systems also manage wireless network connectivity. 
+3) Examples of Operating Systems 
+• Microsoft Windows 
+Created by Microsoft, Microsoft Windows is one of the most popular proprietary operating systems 
+for computers in the world. Most personal computers come preloaded with a version of Microsoft 
+Windows. One downside of Windows is that compatibility with mobile phones has been 
+problematic. 
