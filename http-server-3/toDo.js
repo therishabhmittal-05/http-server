@@ -28,10 +28,12 @@ const userAuth = (req, res, next) => {
  })
  app.post("/toDo", userAuth, (req,res)=>{
     const TODO = req.body.TODO;
-    toDo.push({"TODO": TODO})
+
+    if(TODO){
+      toDo.push({"TODO": TODO})
     res.json({
         "msg": "Done"
-    })
+    })}
  })
  app.delete("/toDo/:id", userAuth, (req,res)=>{
    
@@ -39,5 +41,8 @@ const userAuth = (req, res, next) => {
     console.log(typeof toDoId)
     toDo.splice(toDoId,1)
     res.send(toDo)
+ })
+ app.use((err, req, res, next)=>{
+  res.json("Sorry Server Down")
  })
 app.listen(3000)
