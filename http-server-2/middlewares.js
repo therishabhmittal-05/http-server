@@ -28,6 +28,7 @@ app.get("/info", idAuth, userAndPasswdAuth, (req, res) => {
     msg: "Welcome Aboard",
   });
 });
+app.post("/info",)
 
 app.listen(3000, function () {
   console.log(3000);
