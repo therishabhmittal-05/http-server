@@ -1,5 +1,11 @@
 const express = require("express");
 const app = express();
+const zod = require('zod')
+const schema = zod.array(zod.number())
+const schema2 = zod.object({
+  email: zod.string(),
+  password: zod.string
+})
 var users = [
   {
     name: "Rishabh",
@@ -30,13 +36,18 @@ app.get("/", (req, res) => {
 });
 app.use(express.json());
 app.post("/", (req, res) => {
-  const isHealthy = req.body.isHealthy;
-  users[0].kidneys.push({
-    healthy: isHealthy,
-  });
-  res.json({
-    msg: "done",
-  });
+  // const isHealthy = req.body.isHealthy;
+  // users[0].kidneys.push({
+  //   healthy: isHealthy,
+  // });
+  // res.json({
+  //   msg: "done",
+  // });
+
+  // const kidneys = req.body.kidneys;
+  const user = req.body.user;
+  const response = schema2.safeParse(user)
+  res.send({response})
 });
 app.put("/", (req, res) => {
   for (let i = 0; i < users[0].kidneys.length; i++) {
@@ -75,4 +86,4 @@ function unhealthyCheck(){
   }
   return unhealthy;
 }
-app.listen(3000);
+app.listen(4000);

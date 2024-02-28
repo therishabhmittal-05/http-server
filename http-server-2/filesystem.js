@@ -1,11 +1,12 @@
 const { dir } = require('console');
 const express = require('express');
+const zod = require('zod')
 const app = express();
 const fs = require('fs');
 const dirPath = './testFolder'
  app.get("/files", (req,res)=>{
     fs.readdir(dirPath, (err, files)=>{
-        if(err){
+         if(err){
             return res.status(500).json({error : "failed to retrieve files"})
         }
         res.json(files);
