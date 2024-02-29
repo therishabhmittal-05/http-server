@@ -4,7 +4,8 @@ const zod = require('zod')
 const schema = zod.array(zod.number())
 const schema2 = zod.object({
   email: zod.string(),
-  password: zod.string
+  password: zod.string().min(8),
+  country: zod.literal("IN").or(zod.literal("US"))
 })
 var users = [
   {
@@ -86,4 +87,7 @@ function unhealthyCheck(){
   }
   return unhealthy;
 }
+app.use((err, req, res, next)=>{
+  res.send("Hi There aa gye ithe")
+})
 app.listen(4000);
