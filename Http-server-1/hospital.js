@@ -47,8 +47,9 @@ app.post("/", (req, res) => {
 
   // const kidneys = req.body.kidneys;
   const user = req.body.user;
-  const response = schema2.safeParse(user)
-  res.send({response})
+  // const response = schema2.safeParse(user)
+  // res.send({response})
+  throw new Error()  
 });
 app.put("/", (req, res) => {
   for (let i = 0; i < users[0].kidneys.length; i++) {
