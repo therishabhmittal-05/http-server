@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function addTodo(){
+        const title = document.getElementById('title').value
+        const description = document.getElementById('description').value 
+        console.log(title)
+        console.log(description)
+        // const todoFirst  =  document.getElementById('container').innerHTML
+        // document.getElementById('container').innerHTML = todoFirst + `
+        // <div>${title}</div>
+        // <div>${description}</div>
+        // <button>Mark as done</button>`
+
+        const titleText = document.createElement("div")
+        const descText = document.createElement("div")
+        const button = document.createElement("button")
+        titleText.innerHTML = title;
+        descText.innerHTML = description;
+        button.innerHTML = "Mark as done";
+        const parentDiv = document.getElementById('parentDiv')
+        parentDiv.appendChild('titleText')
+        parentDiv.appendChild('descText')
+        parentDiv.appendChild('button')
+        document.getElementById('container').appendChild('parentDiv')
+    }
+</script>
+<style>
+    body {
+        background-color: grey;
+    }
+</style>
+<body>
+    <div>
+        <input id="title" type="text" placeholder="title"></br>
+        <input id="description" type="text" placeholder="description" ></br>
+        <button onclick="addTodo()">Add Todo</button>
+    </div>
+    <div id="container">
+        <div id="parentDiv">
+
+        </div>
+        
+    </div>
+</body>
+</html>

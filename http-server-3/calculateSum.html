@@ -21,7 +21,7 @@
     async function sum(){
         let numA = document.getElementById('A').value;
         let numB = document.getElementById('B').value;
-        const response = await fetch("https://sum-server.100xdevs.com/sum?a=" + numA + "&b=" +numB)
+        const response = await fetch("http://localhost:3000/sum/?a=" + numA + "&b=" +numB)
         const ans  = await response.text()
         document.getElementById('findSum').innerHTML = ans;
     }
