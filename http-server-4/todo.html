@@ -3,33 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDo</title>
 </head>
-<script>
-    function addTodo(){
-        const title = document.getElementById('title').value
-        const description = document.getElementById('description').value 
-        console.log(title)
-        console.log(description)
-        // const todoFirst  =  document.getElementById('container').innerHTML
-        // document.getElementById('container').innerHTML = todoFirst + `
-        // <div>${title}</div>
-        // <div>${description}</div>
-        // <button>Mark as done</button>`
 
-        const titleText = document.createElement("div")
-        const descText = document.createElement("div")
-        const button = document.createElement("button")
-        titleText.innerHTML = title;
-        descText.innerHTML = description;
-        button.innerHTML = "Mark as done";
-        const parentDiv = document.getElementById('parentDiv')
-        parentDiv.appendChild('titleText')
-        parentDiv.appendChild('descText')
-        parentDiv.appendChild('button')
-        document.getElementById('container').appendChild('parentDiv')
-    }
-</script>
 <style>
     body {
         background-color: grey;
@@ -39,7 +15,7 @@
     <div>
         <input id="title" type="text" placeholder="title"></br>
         <input id="description" type="text" placeholder="description" ></br>
-        <button onclick="addTodo()">Add Todo</button>
+        <button onclick="updateToDo()">Add Todo</button>
     </div>
     <div id="container">
         <div id="parentDiv">
@@ -47,5 +23,76 @@
         </div>
         
     </div>
+    <script>
+        let globalID = 1;
+        function markDone(id){
+            const element = document.getElementById(id)
+            console.log(element);
+            element.children[2].innerHTML = "Done!!"
+            setTimeout(function(){
+                element.remove()
+            }, 2000)
+        }
+        function createTodoElement(title, description, id){
+            const parentDiv = document.createElement('div')
+            const titleText = document.createElement("div")
+            const descText = document.createElement("div")
+            const button = document.createElement("button")
+            titleText.innerHTML = title;
+            descText.innerHTML = description;
+            button.innerHTML = "Mark as done";
+            parentDiv.appendChild(titleText)
+            parentDiv.appendChild(descText)
+            parentDiv.appendChild(button)
+            parentDiv.setAttribute('id', id)
+            console.log(parentDiv)
+            button.setAttribute('onclick',  `markDone(${id})`)
+            return parentDiv;
+    
+        }
+        // function addTodo(){
+        //     const title = document.getElementById('title').value
+        //     const description = document.getElementById('description').value 
+        //     const container = document.getElementById('container')
+        //     container.appendChild(createTodoElement(title, description, globalID++))
+            
+        // }
+    //state will be an array 
+    // state will have objects with keys id, title and description
+            function updateToDo(state){
+                const container = document.getElementById('container');
+                container.innerHTML = '';
+                for(let i = 0; i < state.length; i++){
+                     let child = createTodoElement(state[i].title, state[i].description, state[i].id)
+                     container.appendChild(child);
+                }
+    
+            }
+            // window.setInterval(async function({
+            //     const res = await fetch('http://localhost:3000/todo')
+            //     const data = await res.json()
+            //     updateToDo(data);
+            // }))
+            updateToDo([
+                {
+                    id: 1,
+                    title: "First",
+                    description: "First Description"
+                },
+                {
+                    id: 2,
+                    title: "Second",
+                    description: "Second Description"
+                }
+            ])
+    
+    
+    </script>
 </body>
 </html>
+
+<!-- // const todoFirst  =  document.getElementById('container').innerHTML
+        // document.getElementById('container').innerHTML = todoFirst + `
+        // <div>${title}</div>
+        // <div>${description}</div>
+        // <button>Mark as done</button>` -->
