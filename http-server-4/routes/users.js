@@ -14,3 +14,6 @@ router.get('/:id', (req, res) => {
 })
 
 module.exports = router
+
+
+// Array method .find()  takes callback as an argument and returns the first element in the array that satisfies the condition in the callback. If no element satisfies the condition, it returns undefined.
