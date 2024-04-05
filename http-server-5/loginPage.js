@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const jwtPassword = 'secret'
 app.use(express.json())
 
-const allUsers = [{username: 'admin', password: 'admin'}, {username: 'user', password: 'user'}]
+const allUsers = [{username: 'Rishabh', password: 'admin', name:"Rishabh Mittal"}, {username: 'Sushant', password: 'user', name:"Sushant Mittal"}]
 
 function isUser(username, password){
     return allUsers.find(function(user){
@@ -30,8 +30,17 @@ app.get('/users', (req, res)=>{
     const token = req.headers.authorization
     try{
         const decoded = jwt.verify(token, jwtPassword)
+        console.log(decoded)
         const username = decoded.username
-        return res.json(allUsers.find((user)=>user.username !== username))
+
+
+        return res.json({
+            Users: allUsers.filter((value)=>{
+                if(value.username != username){
+                    return value
+                }
+            })
+        })
     }
     catch(err){
         return res.json({error: 'Invalid token'})
