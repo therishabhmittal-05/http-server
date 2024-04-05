@@ -43,7 +43,7 @@ app.get('/users', (req, res)=>{
         })
     }
     catch(err){
-        return res.json({error: 'Invalid token'})
+        return res.json({error: 'Invalid'})
     }
 })
 
