@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const jwtPassword = "secret";
 
 mongoose.connect(
-  "mongodb+srv://rishabh:rishabh@mongodb-1.l22jnkl.mongodb.net/user_app"
+  "mongodb+srv://<username>:<password>@mongodb-2.77kjivx.mongodb.net/"
 );// connect me to database 
 // mongoose.model--> to create a model, ask for table name and schema
 const userSchema = mongoose.model("userStatus", {
